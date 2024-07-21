@@ -6,14 +6,15 @@ import CTAButton from '../components/core/home/CTAButton';
 import Banner from '../assets/Images/banner.mp4'
 import CodeBlocks from '../components/core/home/CodeBlocks';
 import BlueGradient from '../components/common/BlueGradient';
-import OrangeGradient from '../components/common/OrangeGradient';
+import TimeLineSection from '../components/core/home/TimeLineSection';
+import LearningSection from '../components/core/home/LearningSection';
 
 function Home() {
   return (
     // home
     <div className=''>
         {/* section 1 */}
-        <section className='w-full relative bg-richblack-900 pb-24'>
+        <section className='w-full relative bg-richblack-900'>
             {/* width container */}
             <div className='w-11/12 max-w-[1260px] mx-auto flex flex-col items-center justify-cente text-richblack-200'>
 
@@ -114,13 +115,55 @@ function Home() {
                     />
                 </div>
 
-
             </div>
-            
         </section>
          
 
         {/* section 2 */}
+        <section className='w-full relative bg-pure-greys-5 pb-24'>
+
+            <div className='home_bg h-[320px]'>
+                <div className='w-11/12 max-w-[1260px] mx-auto h-full'>
+                    <div className='flex items-center h-full justify-center gap-5'>
+                        <CTAButton active={true} linkTo={"/signup"}>
+                           <div className='flex items-center justify-center gap-2 '>
+                                Explore Full Catalog
+                                <FaArrowRight className='text-sm'/>
+                           </div>
+                        </CTAButton>
+                        <CTAButton active={false} linkTo={"/login"}>
+                            Learn More
+                        </CTAButton>
+                    </div>
+                </div>
+            </div>
+            {/* width container */}
+            <div className='w-11/12 max-w-maxContent mx-auto flex flex-col items-center justify-center gap-5'>
+
+                <div className='flex gap-3 mt-16 justify-between'>
+                    {/* left */}
+                    <div className='w-[45%] text-4xl font-semibold'>
+                        Get the skills you need for a
+                        <HighlightText text={"job that is in demand."}/>
+                    </div>
+                    {/* right */}
+                    <div className='w-[40%] flex flex-col gap-10'>
+                        <p className='text-base font-medium'>
+                            The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
+                        </p>
+                        <CTAButton active={true} linkTo={"/login"} >
+                            Learn More
+                        </CTAButton>
+                    </div>
+
+                </div>
+
+                <TimeLineSection/>
+
+                <LearningSection/>
+
+            </div>
+        </section>
 
 
         {/* section 3 */}

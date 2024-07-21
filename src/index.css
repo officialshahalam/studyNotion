@@ -6,3 +6,6 @@ html,body{
     overflow-x: hidden;
 }
 
+.home_bg{
+    background: url("../src/assets/Images/bghome.svg");
+}
