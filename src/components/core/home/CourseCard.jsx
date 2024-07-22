@@ -23,7 +23,6 @@ function CourseCard({courseData,currentCard,setCurrentCard}) {
                 <p>beginner</p>
             </div>
             <div className={`flex gap-4 items-center font-medium ${courseData==currentCard?"text-blue-400":""}`}>
-                <TbBinaryTree2/>
                 <p>6 Lessons</p>
             </div>
         </div>
