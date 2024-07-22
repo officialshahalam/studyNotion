@@ -8,6 +8,7 @@ import CodeBlocks from '../components/core/home/CodeBlocks';
 import BlueGradient from '../components/common/BlueGradient';
 import TimeLineSection from '../components/core/home/TimeLineSection';
 import LearningSection from '../components/core/home/LearningSection';
+import ExploreMore from '../components/core/home/ExploreMore';
 
 function Home() {
   return (
@@ -115,6 +116,8 @@ function Home() {
                     />
                 </div>
 
+                <ExploreMore />
+
             </div>
         </section>
          
@@ -159,7 +162,6 @@ function Home() {
                 </div>
 
                 <TimeLineSection/>
-
                 <LearningSection/>
 
             </div>
@@ -167,6 +169,12 @@ function Home() {
 
 
         {/* section 3 */}
+        <section>
+            {/* widthcontainer */}
+            <div>
+                
+            </div>
+        </section>
 
 
         {/* foother */}
