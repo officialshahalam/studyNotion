@@ -9,11 +9,11 @@ function CourseCard({courseData,currentCard,setCurrentCard}) {
     <div 
         onClick={()=>{setCurrentCard(courseData)}}
         className={
-            `flex flex-col justify-between pb-4 bg-white space-y-3 w-[310px] h-[300px] 
-            ${courseData===currentCard ?"bg-white shadow-[12px_12px_0px_0px_#FFD60A]":"bg-black"}`
+            `flex flex-col justify-between pb-4 space-y-3 w-[310px] h-[300px]
+            ${courseData===currentCard ?"bg-white shadow-[12px_12px_0px_0px_#FFD60A]":"bg-richblack-800"}`
         }>
         <div className='px-6 pt-6 pb-24 border-b border-dashed space-y-4'>
-            <h1 className={`text-xl font-semibold ${courseData==currentCard?"text-richblack-900":"text-richblack-300"}`}>{courseData.heading}</h1>
+            <h1 className={`text-xl font-semibold ${courseData==currentCard?"text-richblack-900":"text-richblack-5"}`}>{courseData.heading}</h1>
             <p className={`text-base font-normal`}>{courseData.description}</p>
         </div>
         
