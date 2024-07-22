@@ -115,9 +115,7 @@ function Home() {
                         gradientColor="blue"
                     />
                 </div>
-
                 <ExploreMore />
-
             </div>
         </section>
          

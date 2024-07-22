@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {HomePageExplore} from "../../../data/homepage-explore";
 import HighlightText from './HighlightText';
+import CourseCard from './CourseCard';
 
 let tabsName=[
     "Free",
@@ -13,7 +14,7 @@ let tabsName=[
 function ExploreMore() {
     const [currentTab,setCurrentTab]=useState(tabsName[0]);
     const [course,setCourse]=useState(HomePageExplore[0].courses);
-    const [currentCard,setCurrentCard]=useState(HomePageExplore[0].courses[0].heading);
+    const [currentCard,setCurrentCard]=useState(HomePageExplore[0].courses[0]);
 
     const setExplore = (value) => { 
         setCurrentTab(value);
@@ -24,7 +25,7 @@ function ExploreMore() {
         setCurrentCard(result[0].courses[0]);
     }
   return (
-    <div className='relative w-full flex flex-col gap-9 items-center justify-center'>  
+    <div className='relative w-full flex flex-col gap-9 items-center justify-center pb-[300px]'>  
         <div className='flex flex-col gap-2 justify-center items-center'>
             <h1 className='text-4xl text-center font-semibold'>Unlock the <HighlightText text="Power of Code"/></h1>
             <p className='text-base'>Learn to Build Anything You Can Imagine</p>
@@ -43,8 +44,19 @@ function ExploreMore() {
                 })
             }
         </div>
-        <div>
-            
+        <div className='flex w-full gap-9 items-center justify-center absolute bottom-[-80px] z-10'>
+            {
+                course.map((course,index)=>{
+                    return (
+                        <CourseCard
+                            key={index}
+                            courseData={course}
+                            currentCard={currentCard}
+                            setCurrentCard={setCurrentCard}
+                        />
+                    )
+                })
+            }
         </div>
         
     </div>
