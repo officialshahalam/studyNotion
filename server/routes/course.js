@@ -20,7 +20,7 @@ const {auth,isStudent,isInstructor,isAdmin}=require("../middlewares/auth");
 
 route.post("/createcategory",auth,isAdmin,createCategory);
 route.get("/showallcategory",showAllCategory);
-route.get("/categorypagedetaild",categoryPageDetails);
+route.get("/categorypagedetails",categoryPageDetails);
 
 
 // ********************************************************************************************************
