@@ -52,7 +52,7 @@ cloudinaryConnect();
 app.use("/api/v1/auth",authRoutes);
 app.use("/api/v1/contact",contactRoutes);
 app.use("/api/v1/course",courseRoutes);
-//app.use("/api/v1/payment",paymentRoutes);
+app.use("/api/v1/payment",paymentRoutes);
 app.use("/api/v1/profile",profileRoutes);
 
 //08.default routes

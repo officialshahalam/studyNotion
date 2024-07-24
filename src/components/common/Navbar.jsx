@@ -70,7 +70,7 @@ function Navbar() {
                                         </p>
                                         <IoIosArrowDropdownCircle/>
                                         <div 
-                                            className='invisible absolute left-[50%] top-[50%] flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 lg:w-[300px] z-30 translate-x-[-50%] translate-y-[55%]'
+                                            className='invisible absolute left-[50%] top-[50%] flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 lg:w-[300px] z-30 translate-x-[-50%] translate-y-[20%]'
                                             >
                                                 <div 
                                                     className='w-6 h-6 absolute left-[50%] top-0 translate-y-[-6px] translate-x-5  rotate-45 rounded-sm bg-richblack-5'
