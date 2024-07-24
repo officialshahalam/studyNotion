@@ -38,7 +38,7 @@ function TimeLineSection() {
                     return (
                         <div className='flex gap-3 w-full items-center justify-between px-3 py-4' key={index}>
                             <div className='h-12 w-12 bg-white rounded-full flex items-center justify-center'>
-                                <img src={element.logo}/>
+                                <img src={element.logo} alt='A'/>
                             </div>
                             <div className='flex flex-col gap-1 flex-1'>
                                 <p className='text-lg font-semibold'>{element.heading}</p>
@@ -51,7 +51,7 @@ function TimeLineSection() {
         </div>
         {/* right */}
         <div className='relative w-[600px] min-h-[545px]'>
-            <img src={timelineImage} className='absolute z-10'/>
+            <img src={timelineImage} className='absolute z-10' alt='A'/>
             <div className='absolute scale-[2] top-[100px] right-[100px]'>
                 <BlueGradient/>
             </div>

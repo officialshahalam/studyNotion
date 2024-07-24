@@ -47,7 +47,7 @@ function Home() {
 
                 <div className='right relative w-11/12 max-w-[1035px] min-h-[600px] mt-24'>
                     <div className='bg-white w-[1035px] h-[580px] absolute right-[-20px] top-7 z-10'></div>
-                    <video className='absolute z-20' autoPlay muted loop controls src={Banner}/>
+                    <video className='absolute z-20' autoPlay muted loop controls src={Banner} />
                     <div className='absolute -top-[80px] right-[250px]'>
                         <BlueGradient/>
                     </div>

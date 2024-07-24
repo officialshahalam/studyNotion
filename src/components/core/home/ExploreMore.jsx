@@ -35,7 +35,7 @@ function ExploreMore() {
                 tabsName.map((tab,index)=>{
                     return (
                         <div 
-                            className={`flex justify-center items-center text-base rounded-full font-medium cursor-pointer transition-all duration-500 px-7 py-2 ${tab==currentTab?"bg-richblack-900 text-richblack-5":"bg-transparent text-richblack-200"}`}
+                            className={`flex justify-center items-center text-base rounded-full font-medium cursor-pointer transition-all duration-500 px-7 py-2 ${tab===currentTab?"bg-richblack-900 text-richblack-5":"bg-transparent text-richblack-200"}`}
                             key={index}
                             onClick={()=>setExplore(tab)}>
                             {tab}

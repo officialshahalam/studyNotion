@@ -2,7 +2,7 @@ import React from 'react'
 import Template from '../components/core/auth/Template';
 import signupImage from "../assets/Images/signup.webp"
 
-function Signup({setIsLogedin}) {
+function Signup() {
   return (
     <div className='bg-richblack-900 min-h-screen'>
         <Template

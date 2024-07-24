@@ -64,6 +64,7 @@ exports.signUp=async(req,res)=>{
     try{
         //fetch data
         const {accountType,firstName,lastName,email,phoneNumber,password,confirmPassword,otp}=req.body;
+        console.log("otp is:::",otp);
         //validate
         if(!accountType||!firstName||!lastName||!email||!password||!confirmPassword||!otp){
             return res.status(400).json({
@@ -88,7 +89,9 @@ exports.signUp=async(req,res)=>{
             });
         }
         //find most recent otps
-        const recentotp=await Otp.find({email}).sort({createdAt:-1}).limit(1); 
+        const recentotp=await Otp.find({email}).sort({createdAt:-1}).limit(1);
+
+        console.log("resent otp is:::",recentotp);
 
         if(recentotp.length === 0){
             return res.status(400).json({

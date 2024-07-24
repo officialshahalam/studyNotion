@@ -27,7 +27,6 @@ function Navbar() {
     const fetchSubLinks=async ()=>{
         try{
             const result =await apiConnector("get",categories.CATEGORY_API);
-            console.log("fetched categories are ::",result);
             setSubLinks(result.data.allCategory);
         }
         catch(e){
@@ -54,7 +53,7 @@ function Navbar() {
     <div className='h-14 border-b-[1px] border-b-richblack-700 bg-richblack-900 flex items-center'>
         <div className='w-11/12 max-w-maxContent mx-auto flex items-center justify-between'>
             <NavLink to="/">
-                <img src={logo} height={42} width={160} loading='lazy'/>
+                <img src={logo} height={42} width={160} alt='A' loading='lazy'/>
             </NavLink>
             <nav className='flex gap-3 text-richblack-400'>
                 {
@@ -112,7 +111,7 @@ function Navbar() {
 
             <div className='flex gap-x-4 items-center'>
                 {
-                    user && user.accountType != "instructor" && 
+                    user && user.accountType !== "instructor" && 
                     (
                         <NavLink to={"/dashboard/cart"} className="relative">
                             <FaShoppingCart/> 

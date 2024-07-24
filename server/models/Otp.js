@@ -13,8 +13,8 @@ const otpSchema=mongoose.Schema({
     },
     createdAt:{
         type:Date,
-        default:Date.now(),
-        expires:Date.now() + 5*60*1000,
+        default:Date.now,
+        expireAt: new Date(Date.now() + 10 * 1000),
     }
 });
 

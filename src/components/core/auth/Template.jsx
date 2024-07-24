@@ -27,8 +27,8 @@ function Template({title,desc1,desc2,formType,image}) {
             </button>
         </div>
         <div className='right relative w-10/12 max-w-[450px]'>
-            <img className='absolute top-4 -right-4' src={image}/>
-            <img src={frameImage}/>
+            <img className='absolute top-4 -right-4' src={image} alt='A'/>
+            <img src={frameImage} alt='A'/>
         </div>
     </div>
   )

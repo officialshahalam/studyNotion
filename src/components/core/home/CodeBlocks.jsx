@@ -33,7 +33,7 @@ function CodeBlocks({order,heading,subHeading,ctaBtn1,ctaBtn2,codeText,codeColor
         <div className='relative'>
             <div className='absolute top-[-70px] scale-90 left-[50px] z-0 blur-xl'>
                 {
-                    gradientColor=="orange"?<OrangeGradient/>:<BlueGradient/>
+                    gradientColor==="orange"?<OrangeGradient/>:<BlueGradient/>
                 }
             </div>  
             <div className='w-[470px] flex text-richblack-400 font-bold border p-2 bg-[#111E32] bg-opacity-40'>

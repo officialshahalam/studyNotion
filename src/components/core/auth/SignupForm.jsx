@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { IoEye,IoEyeOff } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
+import { setSignupData } from '../../../slices/authSlice';
+import { sendOtp } from '../../../services/operations/auth';
+import { useNavigate } from 'react-router-dom';
 
 
 function SignupForm() {
-
-    const navigate=useNavigate();
+    
+    const navigate = useNavigate()
+    const dispatch=useDispatch();
 
     const [formData,setFormData]=useState({
         accountType:"student",
@@ -32,14 +36,17 @@ function SignupForm() {
 
     function submitHandler(event){
         event.preventDefault();
-        if(formData.password !=formData.confirmPassword){
+        if(formData.password !== formData.confirmPassword){
             toast.warning("Password and confirm not match");
             return;
         }
-        else{
-            toast.success("Sign Up successfully");
-            console.log(formData);
-        }
+        console.log("form data::",formData);
+
+        //sent data to store which is use after verification
+        dispatch(setSignupData(formData));
+        //sent otp and navigate to verify email page
+        dispatch(sendOtp(formData.email,navigate));
+
     }
 
 
@@ -48,10 +55,10 @@ function SignupForm() {
     <div>
         <form 
             onSubmit={submitHandler}
-            className='flex flex-col gap-4'
+            className='flex flex-col gap-4 text-richblack-5'
             >
             {/* chose account type */}
-            <div className="bg-richblack-800 w-fit px-1  py-2 rounded-full space-x-2">
+            <div className="bg-richblack-800 w-fit px-1  py-2 rounded-full space-x-2 ">
                 <label className={`px-6 py-2 transition-all duration-200 rounded-full ${formData.accountType==="student"?"bg-richblack-900 text-richblack-5": "text-richblack-200"}`}>
                     <span>Student</span>
                     <input

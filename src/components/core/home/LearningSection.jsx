@@ -16,9 +16,9 @@ function LearningSection() {
           </p>
         </div>
         <div className='flex relative w-11/12 mx-auto min-h-[500px]'>
-          <img src={knowYourProgress} className='absolute top-10 left-4'/>
-          <img src={compareWithOther} className='absolute top-2 left-[30%]'/>
-          <img src={planYourLesson} className='absolute top-4 right-0'/>
+          <img src={knowYourProgress} alt='A' className='absolute top-10 left-4'/>
+          <img src={compareWithOther} alt='B' className='absolute top-2 left-[30%]'/>
+          <img src={planYourLesson} alt='C' className='absolute top-4 right-0'/>
         </div>
         <div className='flex justify-center items-center py-4'>
           <CTAButton active={true} linkTo={"/signup"}>Learn More</CTAButton>
