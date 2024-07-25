@@ -6,7 +6,7 @@ const {SENDOTP_API,SIGNUP_API,LOGIN_API}=authApi;
 
 export function sendOtp(email, navigate) {
     return async (dispatch)=>{
-        // const toastId = toast.loading("Loading...");
+        const toastId = toast.loading("Loading...");
         try {
             const response = await apiConnector("POST", SENDOTP_API, {email,checkUserPresent: true,});
             console.log("response of send otp is ",response);
@@ -17,7 +17,7 @@ export function sendOtp(email, navigate) {
             console.log(error);
             toast.error(error.response.data.message);
         }
-        // toast.dismiss(toastId)
+        toast.dismiss(toastId)
     }
 }
 
