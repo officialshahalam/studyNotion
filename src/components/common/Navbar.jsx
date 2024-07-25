@@ -82,7 +82,7 @@ function Navbar() {
                                                         (
                                                             subLinks.map((subLink,index)=>(
                                                                 <NavLink to={subLink.description} key={index}>
-                                                                    <p>{subLink.name}</p>
+                                                                    <p className='border-b border-richblack-400 p-1 capitalize text-base'>{subLink.name}</p>
                                                                 </NavLink>
                                                             ))
                                                         ) 
