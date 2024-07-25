@@ -1,8 +1,9 @@
 import { toast } from "react-toastify";
 import { apiConnector } from "../apiConnector";
 import { authApi } from "../apis";
+import { setLoading } from "../../slices/authSlice";
 
-const {SENDOTP_API,SIGNUP_API,LOGIN_API}=authApi;
+const {SENDOTP_API,SIGNUP_API,LOGIN_API,RESET_PASSWORD_TOKEN_API,RESET_PASSWORD_API}=authApi;
 
 export function sendOtp(email, navigate) {
     return async (dispatch)=>{
@@ -53,5 +54,45 @@ export function login(email,password,navigate){
         }
         toast.dismiss(toastId);
     }
+}
 
+
+export const resetPasswordToken=(email,setEmailSent)=>{
+    return async (dispatch)=>{
+        dispatch(setLoading(true));
+        const toastId=toast.loading("Loading...");
+        try{
+            console.log("url is ",RESET_PASSWORD_TOKEN_API);
+            const response=await apiConnector("PUT",RESET_PASSWORD_TOKEN_API,{email});
+            console.log("RESETPASSTOKEN RESPONSE....", response);
+            toast.success(response.data.message);
+            setEmailSent(true);
+        }
+        catch(e){
+            console.log("Error while reset password token ::",e);
+            toast.error(e.response.data.message);
+        }
+        dispatch(setLoading(false));
+        toast.dismiss(toastId);
+    }
+}
+
+export const resetPassword=(password,confirmPassword,token,navigate)=>{
+    return async (dispatch)=>{
+        dispatch(setLoading(true));
+        const toastId=toast.loading("Loading...");
+        try{
+            console.log("url is ::",RESET_PASSWORD_API);
+            const response=await apiConnector("PUT",RESET_PASSWORD_API,{password,confirmPassword,token});
+            console.log("RESETPASS RESPONSE....", response);
+            toast.success(response.data.message);
+            navigate("/login");
+        }
+        catch(e){
+            console.log("Error while reset password ::",e);
+            toast.error(e.response.data.message);
+        }
+        dispatch(setLoading(false));
+        toast.dismiss(toastId);
+    }
 }

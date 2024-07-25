@@ -11,4 +11,6 @@ export const authApi = {
   SENDOTP_API: BASE_URL + "/auth/sendotp",
   SIGNUP_API: BASE_URL + "/auth/signup",
   LOGIN_API: BASE_URL+"/auth/login",
+  RESET_PASSWORD_TOKEN_API:BASE_URL+"/auth/resetpasswordtoken",
+  RESET_PASSWORD_API:BASE_URL+"/auth/resetpassword",
 }

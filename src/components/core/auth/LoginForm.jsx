@@ -57,7 +57,7 @@ function LoginForm() {
                         showPassword?(<IoEyeOff/>):(<IoEye/>)
                     }
                 </span>
-                <NavLink to="/resetpassword">
+                <NavLink to="/reset-password">
                     <p className='text-xs w-full text-right mt-2 text-blue-100'>Forget Password</p>
                 </NavLink>
             </label>
