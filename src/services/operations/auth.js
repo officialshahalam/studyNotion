@@ -42,6 +42,7 @@ export function login(email,password,navigate){
     return async (dispatch)=>{
         const toastId=toast.loading("Loading...");
         try{
+            console.log("login api is ::",LOGIN_API);
             const response=await apiConnector("POST",LOGIN_API,{email,password});
             console.log("Login response::",response);
             toast.success(response.data.message);
