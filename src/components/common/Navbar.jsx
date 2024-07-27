@@ -9,6 +9,7 @@ import ProfileDropDown from '../core/auth/ProfileDropDown';
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { apiConnector } from '../../services/apiConnector';
 import { categories } from '../../services/apis';
+import { AiOutlineMenu } from 'react-icons/ai';
 
 
 function Navbar() {
@@ -16,6 +17,7 @@ function Navbar() {
     const {token}=useSelector((state)=>state.auth);
     const {user}=useSelector((state)=>state.profile);
     const {totalItem}=useSelector((state)=>state.profile);
+    const [openMenu,setOpenMenu]=useState(false);
 
     const location =useLocation();
     const matchRoute=(path)=>{
@@ -55,7 +57,8 @@ function Navbar() {
             <NavLink to="/">
                 <img src={logo} height={42} width={160} alt='A' loading='lazy'/>
             </NavLink>
-            <nav className='flex gap-3 text-richblack-400'>
+            <nav className={`${openMenu?"absolute right-0 top-14 w-[250px] gap-2 p-4 z-20 flex flex-col items-start justify-center bg-white  bg-opacity-80 text-richblack-900":"md:flex items-center gap-3 text-richblack-400 hidden"}`}>
+
                 {
                     NavbarLinks.map((element,index)=>(
                         <div key={index}>
@@ -107,51 +110,56 @@ function Navbar() {
                         </div>
                     ))
                 }
+                <div className={`${openMenu ? "flex flex-col  gap-y-2":"flex gap-x-4 items-center"}`}>
+                    {
+                        user && user.accountType !== "instructor" && 
+                        (
+                            <NavLink to={"/dashboard/cart"} className="relative">
+                                <FaShoppingCart/> 
+                                {
+                                    totalItem > 0 &&
+                                    (
+                                        <span>{totalItem}</span> 
+                                    )
+                                }
+                            </NavLink>
+                        )
+                    }
+                    {
+                        token == null && 
+                        (
+                            <NavLink to="/login">
+                                <button
+                                    className='bg-richblack-800 border border-richblack-700 text-richblack-100 px-3 py-2 rounded-md'
+                                    >
+                                    Log In
+                                </button>
+                            </NavLink>
+                        )
+                    }
+                    {
+                        token == null && 
+                        (
+                            <NavLink to="/signup">
+                                <button
+                                    className='bg-richblack-800 border border-richblack-700 text-richblack-100 px-3 py-2 rounded-md'
+                                    >
+                                    Sign Up
+                                </button>
+                            </NavLink>
+                        )
+                    }
+                    {
+                        token !== null && <ProfileDropDown />
+                    }
+                </div>
             </nav>
 
-            <div className='flex gap-x-4 items-center'>
-                {
-                    user && user.accountType !== "instructor" && 
-                    (
-                        <NavLink to={"/dashboard/cart"} className="relative">
-                            <FaShoppingCart/> 
-                            {
-                                totalItem > 0 &&
-                                (
-                                    <span>{totalItem}</span> 
-                                )
-                            }
-                        </NavLink>
-                    )
-                }
-                {
-                    token == null && 
-                    (
-                        <NavLink to="/login">
-                            <button
-                                className='bg-richblack-800 border border-richblack-700 text-richblack-100 px-3 py-2 rounded-md'
-                                >
-                                Log In
-                            </button>
-                        </NavLink>
-                    )
-                }
-                {
-                    token == null && 
-                    (
-                        <NavLink to="/signup">
-                            <button
-                                className='bg-richblack-800 border border-richblack-700 text-richblack-100 px-3 py-2 rounded-md'
-                                >
-                                Sign Up
-                            </button>
-                        </NavLink>
-                    )
-                }
-                {
-                    token !== null && <ProfileDropDown />
-                }
-            </div>
+            <button 
+                onClick={(e)=>setOpenMenu(!openMenu)}
+                className="mr-4 md:hidden">
+                <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+            </button>
 
             
         </div>

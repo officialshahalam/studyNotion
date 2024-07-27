@@ -40,7 +40,7 @@ function UpdatePassword() {
                 loading ? (<div>Loading</div>)
                 :
                 (
-                    <div className='w-[37%] flex flex-col gap-4'>
+                    <div className='w-full sm:w-[80%] lg:w-[37%] flex flex-col gap-4'>
                         <div className='space-y-3'>   
                             <h1 className='text-3xl font-semibold'>Choose  new password</h1>
                             <p className='text-lg text-richblack-200 font-normal'>Almost done. Enter your new password and youre all set.</p>

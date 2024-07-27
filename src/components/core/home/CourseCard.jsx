@@ -9,7 +9,7 @@ function CourseCard({courseData,currentCard,setCurrentCard}) {
     <div 
         onClick={()=>{setCurrentCard(courseData)}}
         className={
-            `flex flex-col justify-between pb-4 space-y-3 w-[310px] h-[300px]
+            `flex flex-col justify-between pb-4 space-y-3 lg:w-[310px] h-[300px]
             ${courseData===currentCard ?"bg-white shadow-[12px_12px_0px_0px_#FFD60A]":"bg-richblack-800"}`
         }>
         <div className='px-6 pt-6 pb-24 border-b border-dashed space-y-4'>

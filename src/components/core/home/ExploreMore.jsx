@@ -25,17 +25,17 @@ function ExploreMore() {
         setCurrentCard(result[0].courses[0]);
     }
   return (
-    <div className='relative w-full flex flex-col gap-9 items-center justify-center pb-[300px]'>  
+    <div className='relative w-full flex flex-col gap-9 items-center justify-center pb-10 lg:pb-[300px]'>  
         <div className='flex flex-col gap-2 justify-center items-center'>
             <h1 className='text-4xl text-center font-semibold'>Unlock the <HighlightText text="Power of Code"/></h1>
             <p className='text-base'>Learn to Build Anything You Can Imagine</p>
         </div>
-        <div className='flex justify-ce items-center p-1 bg-richblack-800 border border-richblack-100 rounded-full'>
+        <div className='flex w-full sm:w-fit justify-evenly items-center p-1 bg-richblack-800 border border-richblack-100 rounded-full'>
             {
                 tabsName.map((tab,index)=>{
                     return (
                         <div 
-                            className={`flex justify-center items-center text-base rounded-full font-medium cursor-pointer transition-all duration-500 px-7 py-2 ${tab===currentTab?"bg-richblack-900 text-richblack-5":"bg-transparent text-richblack-200"}`}
+                            className={`flex justify-center items-center text-[8px] sm:text-base  lg:text-base rounded-full font-medium cursor-pointer transition-all duration-500 px-3 sm:px-4 lg:px-7 py-1 sm:py-2 lg:py-2 ${tab===currentTab?"bg-richblack-900 text-richblack-5":"bg-transparent text-richblack-200"}`}
                             key={index}
                             onClick={()=>setExplore(tab)}>
                             {tab}
@@ -44,7 +44,7 @@ function ExploreMore() {
                 })
             }
         </div>
-        <div className='flex w-full gap-9 items-center justify-center absolute bottom-[-80px] z-10'>
+        <div className='flex flex-col lg:flex-row w-full gap-9 items-center justify-center lg:absolute lg:bottom-[-80px] z-10'>
             {
                 course.map((course,index)=>{
                     return (

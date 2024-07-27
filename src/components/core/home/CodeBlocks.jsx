@@ -7,12 +7,12 @@ import BlueGradient from '../../common/BlueGradient';
 
 function CodeBlocks({order,heading,subHeading,ctaBtn1,ctaBtn2,codeText,codeColor,gradientColor}) {
   return (
-    <div className={`flex ${order} justify-between items-center px-[90px] py-[120px]`}>
+    <div className={`flex ${order} flex-col justify-between items-center`}>
         {/* left */}
-        <div className='w-[486px] h-[286px] flex flex-col gap-3'>
+        <div className='lg:w-[486px] w-full lg:min-h-[286px] mb-8 flex flex-col gap-3'>
             <h1 className='text-3xl font-semibold text-white'>{heading}</h1>
             <p className='text-base font-medium'>{subHeading}</p>
-            <div className='space-x-4 pt-12'>
+            <div className='flex flex-col sm:flex-row gap-4 pt-8'>
                 <CTAButton active={ctaBtn1.active} linkTo={ctaBtn1.linkTo}>
                     <div className='flex gap-2 items-center justify-center'>
                         {ctaBtn1.btnText} 
@@ -30,13 +30,13 @@ function CodeBlocks({order,heading,subHeading,ctaBtn1,ctaBtn2,codeText,codeColor
         </div>
 
         {/* right */}
-        <div className='relative'>
+        <div className='relative lg:w-[470px] w-full'>
             <div className='absolute top-[-70px] scale-90 left-[50px] z-0 blur-xl'>
                 {
                     gradientColor==="orange"?<OrangeGradient/>:<BlueGradient/>
                 }
             </div>  
-            <div className='w-[470px] flex text-richblack-400 font-bold border p-2 bg-[#111E32] bg-opacity-40'>
+            <div className=' flex text-richblack-400 font-bold border p-2 bg-[#111E32] bg-opacity-40'>
                 <div className='w-[7%] text-center flex flex-col '>
                     <div>1</div>
                     <div>2</div>

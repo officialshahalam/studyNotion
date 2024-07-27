@@ -45,18 +45,16 @@ function Home() {
                     </CTAButton>
                 </div>
 
-                <div className='right relative w-11/12 max-w-[1035px] min-h-[600px] mt-24'>
-                    <div className='bg-white w-[1035px] h-[580px] absolute right-[-20px] top-7 z-10'></div>
-                    <video className='absolute z-20' autoPlay muted loop controls src={Banner} />
-                    <div className='absolute -top-[80px] right-[250px]'>
+                <div className='right relative w-11/12 max-w-[1035px]  mt-24 lg:min-h-[600px]'>
+                    <video className='lg:absolute shadow-[20px_20px_0px_0px_rgba(255,255,255)] z-10' autoPlay muted loop controls src={Banner} />
+                    <div className='hidden lg:block lg:absolute top-[-80px] md:right-[30%] z-[1]'>
                         <BlueGradient/>
                     </div>
-                    
                 </div>
 
-                <div className='flex flex-col w-full'>
+                <div className='flex flex-col gap-[100px] w-full my-[120px]'>
                     <CodeBlocks 
-                        order={`flex-row`}
+                        order={`lg:flex-row`}
                         heading={
                             <div>
                                 Unlock Your 
@@ -86,7 +84,7 @@ function Home() {
                         gradientColor="orange"
                     />
                     <CodeBlocks 
-                        order={`flex-row-reverse`}
+                        order={`lg:flex-row-reverse`}
                         heading={
                             <div>
                                 Start 
@@ -141,14 +139,14 @@ function Home() {
             {/* width container */}
             <div className='w-11/12 max-w-maxContent mx-auto flex flex-col items-center justify-center gap-5'>
 
-                <div className='flex gap-3 mt-16 justify-between'>
+                <div className='flex flex-col md:flex-row gap-3 mt-16 justify-between'>
                     {/* left */}
-                    <div className='w-[45%] text-4xl font-semibold'>
+                    <div className='md:w-[45%] text-4xl font-semibold'>
                         Get the skills you need for a
                         <HighlightText text={"job that is in demand."}/>
                     </div>
                     {/* right */}
-                    <div className='w-[40%] flex flex-col gap-10'>
+                    <div className='md:w-[40%] flex flex-col gap-10'>
                         <p className='text-base font-medium'>
                             The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
                         </p>

@@ -27,7 +27,7 @@ function ResetPassword() {
                     ?(<div>Loading...</div>)
                     :
                     (
-                        <div className='w-[50%] mx-auto flex flex-col gap-6 p-8'>
+                        <div className='lg:w-[50%] mx-auto flex flex-col gap-6 p-8'>
                             <div className='space-y-3'>
                                 <h1 className='text-3xl text-richblack-5 font-semibold'>
                                     {

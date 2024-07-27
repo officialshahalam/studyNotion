@@ -9,16 +9,16 @@ import planYourLesson from "../../../assets/Images/Plan_your_lessons.png";
 function LearningSection() {
   return (
     <div className='flex flex-col gap-14 w-full pt-10'>
-        <div className='flex flex-col gap-4 justify-center items-center'>
-          <h1 className='text-4xl font-semibold '>Your swiss knife for<HighlightText text={"learning any language"}/></h1>
+        <div className='flex flex-col gap-4 justify-center  items-center'>
+          <h1 className='text-4xl font-semibold text-center lg:text-start'>Your swiss knife for<HighlightText text={"learning any language"}/></h1>
           <p className='text-base font-medium w-8/12 text-center'>
               Using spin making learning multiple languages easy. with 20+ languages realistic voice-over, progress tracking, custom schedule and more.
           </p>
         </div>
-        <div className='flex relative w-11/12 mx-auto min-h-[500px]'>
-          <img src={knowYourProgress} alt='A' className='absolute top-10 left-4'/>
-          <img src={compareWithOther} alt='B' className='absolute top-2 left-[30%]'/>
-          <img src={planYourLesson} alt='C' className='absolute top-4 right-0'/>
+        <div className='flex flex-col lg:flex-row relative w-11/12 mx-auto lg:min-h-[500px]'>
+          <img src={knowYourProgress} alt='A' className='lg:absolute top-10 left-4'/>
+          <img src={compareWithOther} alt='B' className='lg:absolute top-2 left-[30%]'/>
+          <img src={planYourLesson} alt='C' className='lg:absolute top-4 right-0'/>
         </div>
         <div className='flex justify-center items-center py-4'>
           <CTAButton active={true} linkTo={"/signup"}>Learn More</CTAButton>

@@ -26,7 +26,7 @@ function VarifyEmail() {
   return (
     <div className='h-[calc(100vh-42px)] w-full bg-richblack-900'>
         <div className='w-11/12 max-w-maxContent mx-auto text-richblack-5 flex place-content-center h-5/6'>
-            <div className='flex flex-col place-content-center p-8 gap-6 w-[40%]'>
+            <div className='flex flex-col place-content-center p-8 gap-6  lg:w-[40%]'>
               <div className='flex flex-col'>
                 <h1 className='text-3xl font-semibold'>Verify Email</h1>
                 <p className='text-lg leading-6 font-light text-richblack-300 pt-2'>A verification code has been sent to you. Enter the code below</p>
@@ -43,7 +43,7 @@ function VarifyEmail() {
                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                       }}
                       //class property is only applied when we use style also
-                      className='w-14 aspect-square rounded bg-richblack-700 text-center focus:outline-yellow-50'
+                      className='lg:w-14 w-8 aspect-square rounded bg-richblack-700 text-center focus:outline-yellow-50'
                     />}
                   containerStyle={{
                     justifyContent:'space-between',

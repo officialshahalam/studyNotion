@@ -4,8 +4,7 @@ import logo2 from "../../../assets/TimeLineLogo/Logo2.svg"
 import logo3 from "../../../assets/TimeLineLogo/Logo3.svg"
 import logo4 from "../../../assets/TimeLineLogo/Logo4.svg"
 import BlueGradient from '../../common/BlueGradient'
-import timelineImage from "../../../assets/Images/TimelineImage.png"
-
+import timelineImage from "../../../assets/Images/TimelineImage.png";
 function TimeLineSection() {
     var timeLine=[
         {
@@ -30,9 +29,9 @@ function TimeLineSection() {
         },
     ]
   return (
-    <div className='flex justify-between items-center gap-[76px] mt-12'>
+    <div className='flex flex-col lg:flex-row w-full justify-between items-center gap-[76px] mt-12'>
         {/* left */}
-        <div className='flex flex-col gap-4 w-[410px]'>
+        <div className='flex flex-col gap-4 lg:w-[410px] w-full'>
             {
                 timeLine.map((element,index)=>{
                     return (
@@ -50,19 +49,20 @@ function TimeLineSection() {
             }
         </div>
         {/* right */}
-        <div className='relative w-[600px] min-h-[545px]'>
-            <img src={timelineImage} className='absolute z-10' alt='A'/>
-            <div className='absolute scale-[2] top-[100px] right-[100px]'>
+        <div className='relative lg:w-[600px] lg:min-h-[545px]'>
+            <img src={timelineImage} className='lg:absolute w-full z-10' alt='A' />
+            <div className='lg:absolute hidden lg:block lg:scale-[2] top-[100px] right-[100px] z-0'>
                 <BlueGradient/>
             </div>
-            <div className='bg-caribbeangreen-700 w-[500px] flex p-11 absolute bottom-[30px] right-12 z-20'>
-                <div className='flex gap-6 w-1/2 border-r-2 border-caribbeangreen-300'>
+            <div className='bg-caribbeangreen-700 mt-8 lg:w-[500px] flex flex-col items-center justify-center lg:flex-row py-4 gap-2 lg:p-11 lg:absolute bottom-[30px] right-12 z-20'>
+                <div className='flex justify-center gap-6 w-full lg:w-1/2 lg:border-r-2 border-caribbeangreen-300'>
                     <p className='text-4xl font-bold text-white'>10</p>
-                    <p className='text-base capitalize text-caribbeangreen-300 font-light leading-5'>Year <br/> Expirence</p>
+                    <p className='text-base capitalize text-center text-caribbeangreen-300 my-auto font-light lg:hidden leading-5'>Year Expirence</p>
+                    <p className='text-base capitalize text-caribbeangreen-300 font-light hidden lg:block leading-5'>Year <br/> Expirence</p>
                 </div>
-                <div className='flex gap-6 w-1/2'>
+                <div className='flex gap-6 w-full justify-center lg:w-1/2'>
                     <p className='text-4xl font-bold text-white ml-6'>250</p>
-                    <p className='text-base capitalize text-caribbeangreen-300 font-light leading-5'>Types of Courses</p>
+                    <p className='text-base capitalize my-auto text-caribbeangreen-300 font-light leading-5'>Types of Courses</p>
                 </div>
             </div>
 
