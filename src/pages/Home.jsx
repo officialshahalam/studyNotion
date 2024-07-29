@@ -9,6 +9,9 @@ import BlueGradient from '../components/common/BlueGradient';
 import TimeLineSection from '../components/core/home/TimeLineSection';
 import LearningSection from '../components/core/home/LearningSection';
 import ExploreMore from '../components/core/home/ExploreMore';
+import InstructorSection from '../components/core/home/InstructorSection';
+import Footer from '../components/core/home/Footer';
+
 
 function Home() {
   return (
@@ -53,8 +56,7 @@ function Home() {
                 </div>
 
                 <div className='flex flex-col gap-[100px] w-full my-[120px]'>
-                    <CodeBlocks 
-                        order={`lg:flex-row`}
+                    <CodeBlocks order={`lg:flex-row`}
                         heading={
                             <div>
                                 Unlock Your 
@@ -83,8 +85,7 @@ function Home() {
                         codeColor={`text-yellow-25`}
                         gradientColor="orange"
                     />
-                    <CodeBlocks 
-                        order={`lg:flex-row-reverse`}
+                    <CodeBlocks order={`lg:flex-row-reverse`}
                         heading={
                             <div>
                                 Start 
@@ -113,7 +114,10 @@ function Home() {
                         gradientColor="blue"
                     />
                 </div>
+               
                 <ExploreMore />
+
+
             </div>
         </section>
          
@@ -138,7 +142,6 @@ function Home() {
             </div>
             {/* width container */}
             <div className='w-11/12 max-w-maxContent mx-auto flex flex-col items-center justify-center gap-5'>
-
                 <div className='flex flex-col md:flex-row gap-3 mt-16 justify-between'>
                     {/* left */}
                     <div className='md:w-[45%] text-4xl font-semibold'>
@@ -156,24 +159,24 @@ function Home() {
                     </div>
 
                 </div>
-
                 <TimeLineSection/>
                 <LearningSection/>
-
             </div>
         </section>
 
 
         {/* section 3 */}
-        <section>
+        <section className='w-full relative bg-richblack-900 text-white'>
             {/* widthcontainer */}
-            <div>
-                
+            <div className='w-11/12 max-w-maxContent mx-auto'>
+                <InstructorSection/>
             </div>
         </section>
-
-
         {/* foother */}
+
+        <footer className='w-full bg-richblack-800 text-white'>
+            <Footer/>
+        </footer>
 
     </div>
   )

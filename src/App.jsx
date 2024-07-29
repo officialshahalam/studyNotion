@@ -6,6 +6,8 @@ import Login from "./pages/Login";
 import VerifyEmail from "./pages/VerifyEmail";
 import ResetPassword from "./pages/ResetPassword";
 import UpdatePassword from "./pages/UpdatePassword";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/verify-email" element={<VerifyEmail/>}/>
         <Route path="/reset-password" element={<ResetPassword/>}/>
         <Route path="/reset-password/:id" element={<UpdatePassword/>}/>
+        <Route path="/about" element={<AboutUs/>}/>
+        <Route path="/contact" element={<ContactUs/>}/>
       </Routes>
     </div>
   );
