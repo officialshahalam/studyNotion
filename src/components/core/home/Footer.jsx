@@ -24,7 +24,7 @@ function Footer() {
                                     <div className='flex flex-col gap-3 mt-5'>
                                         {
                                             element.links.map((link,index)=>(
-                                                <NavLink to={link}>
+                                                <NavLink to={link.split(" ").join("-")}>
                                                     <p className='text-sm text-richblack-400' key={index}>{link}</p>
                                                 </NavLink>
                                             ))
@@ -34,10 +34,19 @@ function Footer() {
                             ))
                         }
                         <div className='flex gap-4 text-richblack-400'>
-                            <FaFacebook/>
-                            <FaGoogle />
-                            <FaTwitter/>
-                            <FaYoutube/>
+                            <NavLink>
+                                <FaFacebook/>
+                            </NavLink>
+                            <NavLink>
+                                <FaGoogle />
+                            </NavLink>
+                            <NavLink>
+                                <FaTwitter/>
+                            </NavLink>
+                            <NavLink>
+                                <FaYoutube/>
+                            </NavLink>
+                            
                         </div>
                     </div>
 
@@ -50,7 +59,9 @@ function Footer() {
                                     <h1 className='text-base'>{element.title}</h1>
                                     {
                                         element.links.map((link,index)=>(
-                                            <p className='text-sm text-richblack-400' key={index}>{link}</p>
+                                            <NavLink to={link.split(" ").join("-")}>
+                                                <p className='text-sm text-richblack-400' key={index}>{link}</p>
+                                            </NavLink>
                                         ))
                                     }
                                 </div>
@@ -64,7 +75,9 @@ function Footer() {
                                     <h1 className='mb-4 text-base'>{element.title}</h1>
                                     {
                                         element.links.map((link,index)=>(
-                                            <p className='text-sm text-richblack-400' key={index}>{link}</p>
+                                            <NavLink to={link.split(" ").join("-")}>
+                                                <p className='text-sm text-richblack-400' key={index}>{link}</p>
+                                            </NavLink>
                                         ))
                                     }
                                 </div>
@@ -82,7 +95,9 @@ function Footer() {
                                     <div className='flex flex-col gap-4'>
                                         {
                                             element.links.map((link,index)=>(
-                                                <p className='text-sm text-richblack-400' key={index}>{link}</p>
+                                                <NavLink to={link.split(" ").join("-")}>
+                                                    <p className='text-sm text-richblack-400' key={index}>{link}</p>
+                                                </NavLink>
                                             ))
                                         }
                                     </div>
@@ -98,7 +113,9 @@ function Footer() {
                                     <div className='flex flex-col gap-4'>
                                         {
                                             element.links.map((link,index)=>(
-                                                <p className='text-sm text-richblack-400' key={index}>{link}</p>
+                                                <NavLink to={link.split(" ").join("-")}>
+                                                    <p className='text-sm text-richblack-400' key={index}>{link}</p>
+                                                </NavLink>
                                             ))
                                         }
                                     </div>
@@ -117,7 +134,7 @@ function Footer() {
                                 <h1 className='text-base'>{element.title}</h1>
                                 {
                                     element.links.map((link,i)=>(
-                                        <NavLink to={link.link} key={i}>
+                                        <NavLink to={link.link.split(" ").join("-")} key={i}>
                                             <p className='text-sm text-richblack-400'>{link.title}</p>
                                         </NavLink>
                                     ))

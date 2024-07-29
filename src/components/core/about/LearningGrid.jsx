@@ -6,7 +6,7 @@ import CTAButton from '../home/CTAButton';
 function LearningGrid() {
   return (
     <section className='w-full bg-richblack-900 text-white'>
-        <div className='w-11/12 max-w-maxContent mx-auto grid grid-cols-1 lg:grid-cols-4 py-16'>
+        <div className='w-11/12 max-w-maxContent mx-auto grid grid-cols-1 lg:grid-cols-4 py-[120px]'>
             {
                 LearningGridArray.map((card,index)=>(
                    <div  
@@ -22,7 +22,7 @@ function LearningGrid() {
                             card.order < 0
                             ?
                             (
-                                <div className='flex flex-col gap-5 '>
+                                <div className='flex flex-col gap-5'>
                                     <h1 className='text-4xl font-semibold '>
                                         <p>{card.heading}</p>
                                         <HighlightText text={card.highliteText} />
@@ -35,7 +35,7 @@ function LearningGrid() {
                             )
                             :
                             (
-                                <div className='flex flex-col gap-4 p-4'>
+                                <div className='flex flex-col gap-8 p-8'>
                                     <h1 className='text-lg'>{card.heading}</h1>
                                     <p className='text-base text-richblack-400'>{card.description}</p>
                                 </div>

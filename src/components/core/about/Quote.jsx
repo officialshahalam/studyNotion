@@ -3,12 +3,12 @@ import HighlightText from '../home/HighlightText'
 
 function Quote() {
   return (
-    <div>
-        We are passionate about revolutionizing the way we learn. Our innovative platform 
+    <div className='text-center text-4xl leading-normal'>
+        <sup>"</sup>We are passionate about revolutionizing the way we learn. Our innovative platform 
         <HighlightText text={"combines technology"}/>
         <span className='text-brown-100'>expertise </span>
         and community to create an 
-        <span className='text-brown-100'>unparalleled educational experience.</span>
+        <span className='text-brown-100'> unparalleled educational experience.<sup>"</sup></span>
     </div>
   )
 }
