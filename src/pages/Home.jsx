@@ -10,7 +10,7 @@ import TimeLineSection from '../components/core/home/TimeLineSection';
 import LearningSection from '../components/core/home/LearningSection';
 import ExploreMore from '../components/core/home/ExploreMore';
 import InstructorSection from '../components/core/home/InstructorSection';
-import Footer from '../components/core/home/Footer';
+import Footer from '../components/common/Footer';
 
 
 function Home() {

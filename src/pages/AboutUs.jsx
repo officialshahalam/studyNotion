@@ -8,7 +8,7 @@ import FoundingStroy from "../assets/Images/FoundingStory.png"
 import StatesComponents from '../components/core/about/StatesComponents';
 import LearningGrid from '../components/core/about/LearningGrid';
 import ContactUsForm from '../components/core/contact/ContactUsForm';
-import Footer from '../components/core/home/Footer';
+import Footer from '../components/common/Footer';
 
 function AboutUs() {
   return (

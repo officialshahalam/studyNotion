@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import CountryCode from "../../../data/countrycode.json";
+import { useDispatch } from 'react-redux';
+import { contactUs } from '../../../services/operations/contactus';
 
 function ContactUsForm() {
-    const [loading,setLoading]=useState(false);
     const {
         register,
         handleSubmit,
@@ -11,8 +12,13 @@ function ContactUsForm() {
         formState: { errors,isSubmitSuccessful },
     } = useForm();
 
+    const dispatch=useDispatch();
+
     const submitContactForm = async (data)=>{
         console.log("Contact Form Data is::",data);
+
+        dispatch(contactUs(data.firstName, data.lastName, data.email, data.CountryCode, data.phoneNumber, data.message));
+
     }
 
     useEffect(()=>{

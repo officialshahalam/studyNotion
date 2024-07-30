@@ -1,37 +1,3 @@
-export const Company=[{
-  title:"Company",
-  links:["About", "Careers", "Affiliates"]
-}]
-export const Support=[{
-  title:"Support",
-  links:["Help Center"]
-}]
-
-
-export const Resources = [{
-  title:"Resourse",
-  links:[
-    "Articles",
-    "Blog",
-    "Chart Sheet",
-    "Code challenges",
-    "Docs",
-    "Projects",
-    "Videos",
-    "Workspaces",
-  ]
-}];
-
-export const Plans = [{
-  title:"Plan",
-  links:["Paid memberships", "For students", "Business solutions"]
-}];
-
-export const Community = [{
-  title:"Community",
-  links:["Forums", "Chapters", "Events"]
-}];
-
 export const FooterLink2 = [
   {
     title: "Subjects",
@@ -55,7 +21,6 @@ export const FooterLink2 = [
       { title: "Web Development", link: "/web-development" },
     ],
   },
-
   {
     title: "Languages",
     links: [
@@ -75,7 +40,6 @@ export const FooterLink2 = [
       { title: "Swift", link: "/swift" },
     ],
   },
-
   {
     title: "Career building",
     links: [
@@ -89,10 +53,3 @@ export const FooterLink2 = [
     ]
   }
 ];
-
-export const BottomFooter = [
-  {
-    title:"bottomFooter",
-    links:["Privacy Policy", "Cookie Policy", "Terms"]
-  }
-  ];

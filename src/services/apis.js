@@ -14,3 +14,7 @@ export const authApi = {
   RESET_PASSWORD_TOKEN_API:BASE_URL+"/auth/resetpasswordtoken",
   RESET_PASSWORD_API:BASE_URL+"/auth/resetpassword",
 }
+
+export const contactApi={
+  CONTACT_US_API: BASE_URL + "/contact"
+}

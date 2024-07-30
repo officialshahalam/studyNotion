@@ -1,10 +1,5 @@
 exports.contactUsEmail = (
-  email,
-  firstname,
-  lastname,
-  message,
-  phoneNo,
-  countrycode
+  firstName, lastName,email, countryCode,phoneNumber, message
 ) => {
   return `<!DOCTYPE html>
   <html>
@@ -78,13 +73,13 @@ exports.contactUsEmail = (
                   src="https://i.ibb.co/g48x1XG/Untitled-design.png" alt="CodePlay Logo"></a>
           <div class="message">Contact Form Confirmation</div>
           <div class="body">
-              <p>Dear ${firstname} ${lastname},</p>
+              <p>Dear ${firstName} ${lastName},</p>
               <p>Thank you for contacting us. We have received your message and will respond to you as soon as possible.
               </p>
               <p>Here are the details you provided:</p>
-              <p>Name: ${firstname} ${lastname}</p>
+              <p>Name: ${firstName} ${lastName}</p>
               <p>Email: ${email}</p>
-              <p>Phone Number: ${phoneNo}</p>
+              <p>Phone Number:${countryCode} ${phoneNumber}</p>
               <p>Message: ${message}</p>
               <p>We appreciate your interest and will get back to you shortly. </p>
           </div>
