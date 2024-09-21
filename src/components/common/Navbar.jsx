@@ -18,8 +18,8 @@ function Navbar() {
     console.log("token:::", token);
     const { user } = useSelector((state) => state.profile);
     console.log("user:::", user);
-    const { totalItem } = useSelector((state) => state.profile);
-    const [openMenu, setOpenMenu] = useState(false);
+    const { totalItem } = useSelector((state) => state.cart);
+    console.log("total item:::",totalItem);
 
     const location = useLocation();
     const matchRoute = (path) => {
@@ -48,7 +48,8 @@ function Navbar() {
                 <NavLink to="/">
                     <img src={logo} height={42} width={160} alt='A' loading='lazy' />
                 </NavLink>
-                <nav className={`${openMenu ? "absolute right-0 top-14 w-[250px] gap-2 p-4 z-20 flex flex-col items-start justify-center bg-white  bg-opacity-80 text-richblack-900" : "md:flex items-center gap-3 text-richblack-400 hidden"}`}>
+
+                <nav className="md:flex hidden text-richblack-400 gap-4">
 
                     {
                         NavbarLinks.map((element, index) => (
@@ -102,16 +103,17 @@ function Navbar() {
                         ))
                     }
                 </nav>
-                <div className={`${openMenu ? "flex flex-col  gap-y-2" : "flex gap-x-4 items-center"}`}>
+                
+                <div className="md:flex hidden gap-y-2 gap-x-4 items-center">
                     {
                         user && user.accountType !== "instructor" &&
                         (
-                            <NavLink to={"/dashboard/cart"} className="relative">
+                            <NavLink to={"/dashboard/cart"} className="relative text-white text-xl">
                                 <FaShoppingCart />
                                 {
                                     totalItem > 0 &&
                                     (
-                                        <span>{totalItem}</span>
+                                        <span className='absolute text-caribbeangreen-400 text-sm top-[-1rem] right-0 animate-bounce font-bold'>{totalItem}</span>
                                     )
                                 }
                             </NavLink>
@@ -145,6 +147,8 @@ function Navbar() {
                         token !== null && <ProfileDropDown />
                     }
                 </div>
+
+                <AiOutlineMenu className='text-white text-2xl md:hidden'/>
             </div>
         </div>
     )

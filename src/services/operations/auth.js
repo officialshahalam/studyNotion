@@ -46,7 +46,7 @@ export function login(email,password,navigate){
             const response=await apiConnector("POST",LOGIN_API,{email,password});
             console.log("Login response::",response);
             localStorage.setItem("token",response.data.token);
-            localStorage.setItem("user",response.data.existingUser);
+            localStorage.setItem("user",JSON.stringify(response.data.existingUser));
             toast.success(response.data.message);
             navigate("/dashboard");
         }
