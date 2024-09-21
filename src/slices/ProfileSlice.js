@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState={
-    user:null
+    user:sessionStorage.getItem("user") ? sessionStorage.getItem("user") : null,
 }
 
 const ProfileSlice=createSlice({

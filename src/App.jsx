@@ -10,6 +10,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 
 
+
 function App() {
   return (
     <div className="w-screen min-h-screen flex flex-col font-inter">

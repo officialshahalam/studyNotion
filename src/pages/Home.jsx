@@ -172,6 +172,7 @@ function Home() {
                 <InstructorSection/>
             </div>
         </section>
+        
         {/* foother */}
 
         <footer className='w-full bg-richblack-800 text-white'>
