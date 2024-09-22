@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-console.log("fghjksc",localStorage.getItem("user"))
 const initialState={
     user:localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null,
 }

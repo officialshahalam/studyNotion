@@ -8,13 +8,17 @@ import ResetPassword from "./pages/ResetPassword";
 import UpdatePassword from "./pages/UpdatePassword";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import { useState } from "react";
 
 
 
 function App() {
+
+  const [sidebar,setSidebar]=useState(true);
+
   return (
     <div className="w-screen min-h-screen flex flex-col font-inter">
-      <Navbar/>
+      <Navbar sidebar={sidebar} setSidebar={setSidebar}/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
@@ -25,6 +29,7 @@ function App() {
         <Route path="/about" element={<AboutUs/>}/>
         <Route path="/contact" element={<ContactUs/>}/>
       </Routes>
+      <div className={`fixed top-0 bottom-0 left-0 right-0 z-20 bg-richblack-100 opacity-50 ${sidebar?"block":"hidden"}`} onClick={()=>setSidebar(false)}></div>
     </div>
   );
 }
