@@ -13,7 +13,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { IoClose } from 'react-icons/io5';
 
 
-function Navbar({sidebar,setSidebar}) {
+function Navbar({ sidebar, setSidebar }) {
 
     const { token } = useSelector((state) => state.auth);
     const { user } = useSelector((state) => state.profile);
@@ -38,10 +38,24 @@ function Navbar({sidebar,setSidebar}) {
 
     useEffect(() => {
         fetchSubLinks();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
+    const handleResize = () => {
+        if (window.innerWidth > 768) {
+            setSidebar(false); // Close sidebar if width is greater than 1200px
+        }
+    };
+
     return (
-        <div className='h-14 border-b-[1px] border-b-richblack-700 bg-richblack-900 flex items-center'>
+        <div className='h-14 border-b-[1px border-b-richblack-700 bg-richblack-900 flex items-center'>
             <div className='w-11/12 max-w-maxContent mx-auto flex items-center justify-between'>
                 <NavLink to="/">
                     <img src={logo} height={42} width={160} alt='A' loading='lazy' />
@@ -63,7 +77,7 @@ function Navbar({sidebar,setSidebar}) {
                                                 <IoIosArrowDropdownCircle />
                                                 <div
                                                     className='invisible absolute left-[50%] top-[50%] flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 lg:w-[300px] z-30 translate-x-[-50%] translate-y-[20%]'
-                                                    >
+                                                >
                                                     <div
                                                         className='w-6 h-6 absolute left-[50%] top-0 translate-y-[-6px] translate-x-5  rotate-45 rounded-sm bg-richblack-5'
                                                     >
@@ -146,14 +160,14 @@ function Navbar({sidebar,setSidebar}) {
                     }
                 </div>
 
-                <AiOutlineMenu className='text-white text-2xl md:hidden' onClick={() => setSidebar(!sidebar)}/>
+                <AiOutlineMenu className='text-white text-2xl md:hidden' onClick={() => setSidebar(!sidebar)} />
 
                 {/* sidebar */}
-                <div 
-                    className={`text-richblack-900 z-50 bg-richblack-900 opacity-90 px-4 w-11/12 max-w-[400px] fixed top-14 right-0 ${sidebar?"block":"hidden"}`}>
+                <div
+                    className={`text-richblack-900 z-50 bg-richblack-900 opacity-90 px-4 w-11/12 max-w-[400px] fixed top-14 right-0 ${sidebar ? "block" : "hidden"}`}>
                     <div className='flex justify-between items-center text-xl py-2 border-b border-richblack-400'>
                         <img src={logo} height={36} width={130} alt='A' loading='lazy' />
-                        <IoClose className='text-richblack-5 text-2xl cursor-pointer' onClick={() => setSidebar(false)}/>
+                        <IoClose className='text-richblack-5 text-2xl cursor-pointer' onClick={() => setSidebar(false)} />
                     </div>
                     <div className='my-4 flex flex-col gap-4'>
                         {
@@ -167,7 +181,7 @@ function Navbar({sidebar,setSidebar}) {
                                                     <p className='text-richblack-5 group-hover:text-yellow-50'>
                                                         {element.title}
                                                     </p>
-                                                    <IoIosArrowDropdownCircle className='text-richblack-5 group-hover:text-yellow-50'/>
+                                                    <IoIosArrowDropdownCircle className='text-richblack-5 group-hover:text-yellow-50' />
                                                     <div
                                                         className='invisible absolute left-[50%] top-[50%] flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 lg:w-[300px] z-30 translate-x-[-50%] translate-y-[20%]'
                                                     >

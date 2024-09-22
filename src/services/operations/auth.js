@@ -49,6 +49,7 @@ export function login(email,password,navigate){
             localStorage.setItem("user",JSON.stringify(response.data.existingUser));
             toast.success(response.data.message);
             navigate("/dashboard");
+            window.location.reload();
         }
         catch(e){
             console.log("Error while login ::",e);
