@@ -14,7 +14,7 @@ import { useState } from "react";
 
 function App() {
 
-  const [sidebar,setSidebar]=useState(true);
+  const [sidebar,setSidebar]=useState(false);
 
   return (
     <div className="w-screen min-h-screen flex flex-col font-inter">
