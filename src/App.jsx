@@ -10,6 +10,14 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import { useState } from "react";
 import OpenRoute from "./components/common/OpenRoute";
+import ProtectedRoute from "./components/common/ProtectedRoute";
+import Dashboard from "./pages/Dashboard";
+import MyProfile from "./components/core/deshboard/MyProfile";
+import Settings from "./components/core/deshboard/Settings";
+import EnrolledCourse from "./components/core/deshboard/EnrolledCourse";
+import PurchaseHistory from "./components/core/deshboard/PurchaseHistory";
+import Cart from "./components/core/deshboard/Cart";
+import Error from "./pages/Error";
 
 
 
@@ -34,9 +42,18 @@ function App() {
         <Route path="/reset-password/:id" element={<UpdatePassword />} />
 
         {/* route for loged in user */}
-        <Route>
-          
+        <Route element={<ProtectedRoute><Dashboard/></ProtectedRoute>}>
+          {/* router for all loged in user */}
+          <Route path="/dashboard/my-profile" element={<MyProfile/>}/>
+          <Route path="/dashboard/settings" element={<Settings/>}/>
+
+          {/* route for students */}
+          <Route path="dashboard/enrolled-courses" element={<EnrolledCourse/>}/>
+          <Route path="dashboard/purchase-history" element={<PurchaseHistory/>}/>
+          <Route path="dashboard/cart" element={<Cart/>}/>
         </Route>
+
+        <Route path="*" element={<Error/>}/>
       </Routes>
 
 

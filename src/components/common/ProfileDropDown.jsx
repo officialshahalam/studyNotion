@@ -13,7 +13,6 @@ function ProfileDropDown() {
   const [open, setOpen] = useState(false);
 
   const { user } = useSelector((state) => state.profile);
-  console.log("user is:::", user);
 
   const dropDownRef=useRef(null);
 
