@@ -1,7 +1,8 @@
 import { toast } from "react-toastify";
 import { apiConnector } from "../apiConnector";
 import { authApi } from "../apis";
-import { setLoading } from "../../slices/authSlice";
+import { setLoading, setToken } from "../../slices/authSlice";
+import { setUser } from "../../slices/ProfileSlice";
 
 const {SENDOTP_API,SIGNUP_API,LOGIN_API,RESET_PASSWORD_TOKEN_API,RESET_PASSWORD_API}=authApi;
 
@@ -48,7 +49,7 @@ export function login(email,password,navigate){
             localStorage.setItem("token",response.data.token);
             localStorage.setItem("user",JSON.stringify(response.data.existingUser));
             toast.success(response.data.message);
-            navigate("/dashboard");
+            navigate("/dashboard/my-profile");
             window.location.reload();
         }
         catch(e){
@@ -59,6 +60,16 @@ export function login(email,password,navigate){
     }
 }
 
+export function logOut(navigate){
+    return (dispatch)=>{
+        dispatch(setToken(null));
+        dispatch(setUser(null));
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        toast.error("Loged Out");
+        navigate("/")
+    }
+}
 
 export const resetPasswordToken=(email,setEmailSent)=>{
     return async (dispatch)=>{

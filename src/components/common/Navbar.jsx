@@ -5,7 +5,7 @@ import { NavbarLinks } from '../../data/navbar-links';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FaShoppingCart } from "react-icons/fa";
-import ProfileDropDown from '../core/auth/ProfileDropDown';
+import ProfileDropDown from './ProfileDropDown';
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { apiConnector } from '../../services/apiConnector';
 import { categories } from '../../services/apis';
@@ -13,7 +13,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { IoClose } from 'react-icons/io5';
 
 
-function Navbar({ sidebar, setSidebar }) {
+function Navbar({ sideNavbar, setSideNavbar }) {
 
     const { token } = useSelector((state) => state.auth);
     const { user } = useSelector((state) => state.profile);
@@ -50,7 +50,7 @@ function Navbar({ sidebar, setSidebar }) {
 
     const handleResize = () => {
         if (window.innerWidth > 768) {
-            setSidebar(false); // Close sidebar if width is greater than 1200px
+            setSideNavbar(false); // Close sidebar if width is greater than 1200px
         }
     };
 
@@ -160,14 +160,14 @@ function Navbar({ sidebar, setSidebar }) {
                     }
                 </div>
 
-                <AiOutlineMenu className='text-white text-2xl md:hidden' onClick={() => setSidebar(!sidebar)} />
+                <AiOutlineMenu className='text-white text-2xl md:hidden' onClick={() => setSideNavbar(!sideNavbar)} />
 
-                {/* sidebar */}
+                {/*sideNavbar */}
                 <div
-                    className={`text-richblack-900 z-50 bg-richblack-900 opacity-90 px-4 w-11/12 max-w-[400px] fixed top-14 right-0 ${sidebar ? "block" : "hidden"}`}>
+                    className={`text-richblack-900 z-50 bg-richblack-900 opacity-90 transition-all duration-300 px-4 w-11/12 max-w-[400px] fixed top-14 ${sideNavbar ? "right-0" : "right-[-400px]"}`}>
                     <div className='flex justify-between items-center text-xl py-2 border-b border-richblack-400'>
                         <img src={logo} height={36} width={130} alt='A' loading='lazy' />
-                        <IoClose className='text-richblack-5 text-2xl cursor-pointer' onClick={() => setSidebar(false)} />
+                        <IoClose className='text-richblack-5 text-2xl cursor-pointer' onClick={() => setSideNavbar(false)} />
                     </div>
                     <div className='my-4 flex flex-col gap-4'>
                         {
