@@ -18,10 +18,14 @@ import EnrolledCourse from "./components/core/deshboard/EnrolledCourse";
 import PurchaseHistory from "./components/core/deshboard/PurchaseHistory";
 import Cart from "./components/core/deshboard/Cart";
 import Error from "./pages/Error";
+import { ACCOUNT_TYPE } from "./utils/constants";
+import { useSelector } from "react-redux";
 
 
 
 function App() {
+
+  const {user}=useSelector((state)=>state.profile);
 
   const [sideNavbar, setSideNavbar] = useState(false);
 
@@ -42,18 +46,24 @@ function App() {
         <Route path="/reset-password/:id" element={<UpdatePassword />} />
 
         {/* route for loged in user */}
-        <Route element={<ProtectedRoute><Dashboard/></ProtectedRoute>}>
+        <Route element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
           {/* router for all loged in user */}
-          <Route path="/dashboard/my-profile" element={<MyProfile/>}/>
-          <Route path="/dashboard/settings" element={<Settings/>}/>
+          <Route path="/dashboard/my-profile" element={<MyProfile />} />
+          <Route path="/dashboard/settings" element={<Settings />} />
 
           {/* route for students */}
-          <Route path="dashboard/enrolled-courses" element={<EnrolledCourse/>}/>
-          <Route path="dashboard/purchase-history" element={<PurchaseHistory/>}/>
-          <Route path="dashboard/cart" element={<Cart/>}/>
+          {
+            user?.accountType === ACCOUNT_TYPE.STUDENT &&
+            (
+              <>
+                <Route path="/dashboard/enrolled-courses" element={<EnrolledCourse />} />
+                <Route path="/dashboard/purchase-history" element={<PurchaseHistory />} />
+                <Route path="/dashboard/cart" element={<Cart />} />
+              </>
+            )
+          }
         </Route>
-
-        <Route path="*" element={<Error/>}/>
+        <Route path="*" element={<Error />} />
       </Routes>
 
 

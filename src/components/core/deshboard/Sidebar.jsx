@@ -29,7 +29,7 @@ function Sidebar() {
 
     return (
         <div >
-            <div className='flex flex-col min-w-[222px] border-r-[1px] border-r-richblack-700 h-[calc(100vh-3.5rem)] bg-richblack-800 py-10'>
+            <div className='flex flex-col min-w-[222px] border-r-[1px] border-r-richblack-700  min-h-[calc(100vh-3.5rem)] bg-richblack-800 py-10'>
                 <div className='flex flex-col'>
                     {
                         sidebarLinks.map((link, index) => {
@@ -42,7 +42,7 @@ function Sidebar() {
                 </div>
                 <div className='h-[1px] w-10/12 mx-auto my-6 bg-richblack-600'></div>
                 <div className='flex flex-col'>
-                    <SidebarLink link={{ name: "Settings", path: "dashboard/settings", icon: "VscSettingsGear" }} />
+                    <SidebarLink link={{ name: "Settings", path: "/dashboard/settings", icon: "VscSettingsGear" }} />
                     <button
                         onClick={() => setConfirmationModalData({
                             text1: "Are you sure ?",

@@ -116,7 +116,8 @@ exports.signUp=async(req,res)=>{
         const profileDetails=await Profile.create({
             gender:null,
             DOB:null,
-            about:null
+            about:null,
+            phoneNumber:null
         });
         const user=await User.create({
             accountType,
@@ -156,8 +157,11 @@ exports.login=async (req,res)=>{
                 message:"All field are required,Please fill all the details"
             });
         }
+       
         //check user exist or not
-        const existingUser=await User.findOne({email});
+        const existingUser=await User.findOne({email})
+                                                    .populate("additionalDetails")
+                                                    .exec();
         if(!existingUser){
             return res.status(400).json({
                 success:false,

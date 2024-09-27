@@ -2,7 +2,7 @@ import React from 'react'
 
 function PurchaseHistory() {
   return (
-    <div className='bg-richblack-900 h-[calc(100vh-3.5rem)] w-[calc(100vw-222px)] text-white'>PurchaseHistory</div>
+    <div className='bg-richblack-900 h-[calc(100vh-3.5rem)]  text-white'>PurchaseHistory</div>
   )
 }
 
