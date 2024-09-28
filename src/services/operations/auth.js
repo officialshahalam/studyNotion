@@ -10,7 +10,7 @@ export function sendOtp(email, navigate) {
     return async (dispatch)=>{
         const toastId = toast.loading("Loading...");
         try {
-            const response = await apiConnector("POST", SENDOTP_API, {email,checkUserPresent: true,});
+            const response = await apiConnector("POST", SENDOTP_API, {email,checkUserPresent: true});
             console.log("response of send otp is ",response);
             toast.success("OTP Sent Successfully")
             navigate("/verify-email")

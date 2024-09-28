@@ -9,7 +9,7 @@ const authRoutes=require("./routes/auth");
 const contactRoutes=require("./routes/contactUs");
 const courseRoutes=require("./routes/course");
 const paymentRoutes=require("./routes/payment");
-const profileRoutes=require("./routes/profile");
+const settingsRoutes=require("./routes/settings");
 const cors=require("cors");
 
 
@@ -54,7 +54,7 @@ app.use("/api/v1/auth",authRoutes);
 app.use("/api/v1",contactRoutes);
 app.use("/api/v1/course",courseRoutes);
 app.use("/api/v1/payment",paymentRoutes);
-app.use("/api/v1/profile",profileRoutes);
+app.use("/api/v1/settings",settingsRoutes);
 
 //08.default routes
 app.get("/",(req,res)=>{

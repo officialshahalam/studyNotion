@@ -111,8 +111,8 @@ function ContactUsForm() {
                                 required:{value:true,message:"Please Enter Phone Number"},
                                 maxLength:{value:"10",message:"Invalid Phone Number"},
                                 minLength:{value:"10",message:"Invalid Phone Number"}
-                            }
-                        )}
+                            })
+                        }
                     />
                 </div>
                 {

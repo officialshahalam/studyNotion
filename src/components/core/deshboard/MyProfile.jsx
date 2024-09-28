@@ -14,7 +14,7 @@ function MyProfile() {
 
         <div className='flex justify-between items-center bg-richblack-800 p-6 border-[1px] border-richblack-600 rounded-lg'>
           <div className='flex items-center gap-6'>
-            <img src={user.imageUrl} alt="image" className='w-20 rounded-full' />
+            <img src={user.imageUrl} alt="image" className='w-20 h-20 rounded-full' />
             <div >
               <p className='text-lg text-richblack-5'>{`${user.firstName} ${user.lastName}`}</p>
               <p className='text-sm text-richblack-300'>{user.email}</p>

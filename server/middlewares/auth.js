@@ -8,6 +8,8 @@ exports.auth=async(req,res,next)=>{
         const token=req.body.token
                     || req.cookies.token
                     || req.header("Authorization").replace("Bearer ","");
+
+        console.log("token is ::",token);
         //check token
         if(!token){
             return res.json({

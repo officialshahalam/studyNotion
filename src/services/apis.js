@@ -18,3 +18,9 @@ export const authApi = {
 export const contactApi={
   CONTACT_US_API: BASE_URL + "/contact"
 }
+
+
+export const settingsApi={
+  UPDATE_DISPLAY_PICTURE_API: BASE_URL + "/settings/updatedisplaypicture",
+  UPDATE_PROFILE_API: BASE_URL +"/settings/updateprofile"
+}
