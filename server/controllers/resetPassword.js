@@ -17,7 +17,6 @@ exports.resetPasswordToken=async(req,res)=>{
         }
         //check user present or not
         const existingUser=await User.findOne({email});
-        console.log("existing user",existingUser);
         if(!existingUser){
             return res.status(401).json({
                 success:false,
@@ -69,7 +68,6 @@ exports.resetPassword=async (req,res)=>{
         }
         //get user from db by token/UUID
         const existingUser=await User.findOne({resetPasswordToken:token});
-        console.log("existing user in reset password",existingUser);
 
         if(!existingUser || Date.now() > existingUser.resetPasswordTokenExpires){
             return res.status(500).json({

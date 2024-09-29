@@ -22,7 +22,7 @@ function ProfileDropDown() {
   return (
     <div className='relative w-fit'>
       <div className='text-white flex items-center gap-2 cursor-pointer' onClick={() => setOpen((prev)=>!prev)}>
-        <img src={user?.imageUrl} className="aspect-square w-[30px] rounded-full object-cover" />
+        <img src={user?.imageUrl } alt={user?.firstName} className="aspect-square w-[30px] rounded-full object-cover" />
         <AiOutlineCaretDown className="text-sm text-richblack-100" />
       </div>
       {

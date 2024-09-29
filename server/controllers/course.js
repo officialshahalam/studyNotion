@@ -35,7 +35,6 @@ exports.createCourse=async (req,res)=>{
         //check user exist or not
         const userId=req.user.id;
         const instructorDetail=await User.findById(userId);
-        console.log("instructor details::",instructorDetail);
         
         if(!instructorDetail){
             return res.status(500).json({
@@ -136,7 +135,6 @@ exports.getCourseDetails=async (req,res)=>{
         //fetch courseId
         const {courseId}=req.body;
 
-        console.log("course id is ::",courseId);
 
         //find coursedetails
         const courseDetails=await Course.findById(courseId)
@@ -155,7 +153,6 @@ exports.getCourseDetails=async (req,res)=>{
                                                     })
                                                     .populate("ratingAndReviews")
                                                     .exec();
-        console.log("course details::",courseDetails);
         
         if(!courseDetails)                                                 {
             return res.status(404).json({

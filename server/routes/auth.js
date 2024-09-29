@@ -18,7 +18,7 @@ const {auth}=require("../middlewares/auth");
 route.post("/sendotp",sendOtp);
 route.post("/signup",signUp);
 route.post("/login",login);
-route.post("/changePassword",auth,changePassword);
+route.put("/update-password",auth,changePassword);
 
 
 //*******************************************************************************************************************

@@ -22,7 +22,6 @@ exports.createCategory=async(req,res)=>{
         }
         //create entry in db
         const categoryResponse=await Category.create({name,description});
-        console.log("categoryDetail::",categoryResponse);
         return res.status(200).json({
             success:true,
             message:"Category created successfully",
@@ -60,14 +59,12 @@ exports.categoryPageDetails=async (req,res)=>{
     try{
         //fetch categoryId
         const {categoryId}=req.body;
-        console.log("category id::",categoryId);
         //get category details with all courses
         const categoryDetail=await Category.findById({_id:categoryId})
                                                                     .populate({
                                                                         path:"courses"
                                                                     })
                                                                     .exec();
-        console.log("category detail",categoryDetail);                                                          
 
         //get other category details with all courses
         const otherCategoryDetails=await Category.find({_id:{$ne:categoryId}})
@@ -75,7 +72,6 @@ exports.categoryPageDetails=async (req,res)=>{
                                                                         path:"courses"
                                                                     })
                                                                     .exec();
-        console.log("other category details",otherCategoryDetails);
         //TODO HW
         //get top courses with all courses 
         const allCategories = await Category.find()

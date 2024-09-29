@@ -59,14 +59,11 @@ exports.updateSection=async (req,res)=>{
                 message:"All field are require",
             });
         }
-        console.log("section name is::",sectionName);
-        console.log("section id is::",sectionId);
         //update data
         const updatedSection=await Section.findByIdAndUpdate(
                                                             sectionId,
                                                             {sectionName:sectionName},
                                                             {new:true});
-        console.log("updated section",updatedSection);
         //res
         return res.status(200).json({
             success:true,

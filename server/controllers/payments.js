@@ -65,7 +65,6 @@ exports.capturePayment=async (req,res)=>{
     try{
         //initiate the payment
         const paymentResponse=await instance.orders.create(options);
-        console.log(paymentResponse);
         // return res
         return res.status(200).json({
             success:true,
@@ -96,7 +95,6 @@ exports.verifySignature=async (req,res)=>{
     const digest=shasum.digest("hex");
 
     if(signature===digest){
-        console.log("Payment id Authorized");
 
         //action after successfully authentication
         

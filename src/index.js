@@ -9,17 +9,19 @@ import rootReducer from './reducer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const store=configureStore({
-  reducer:rootReducer,
+const store = configureStore({
+  reducer: rootReducer,
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <App />
-          <ToastContainer />
-        </BrowserRouter>
-      </Provider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+        <ToastContainer />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
 );
 

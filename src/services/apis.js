@@ -13,6 +13,7 @@ export const authApi = {
   LOGIN_API: BASE_URL+"/auth/login",
   RESET_PASSWORD_TOKEN_API:BASE_URL+"/auth/resetpasswordtoken",
   RESET_PASSWORD_API:BASE_URL+"/auth/resetpassword",
+  UPDATE_PASSWORD_API: BASE_URL +"/auth/update-password"
 }
 
 export const contactApi={
@@ -22,5 +23,6 @@ export const contactApi={
 
 export const settingsApi={
   UPDATE_DISPLAY_PICTURE_API: BASE_URL + "/settings/updatedisplaypicture",
-  UPDATE_PROFILE_API: BASE_URL +"/settings/updateprofile"
+  UPDATE_PROFILE_API: BASE_URL +"/settings/updateprofile",
+  DELETE_ACCOUNT_API: BASE_URL +"/settings/deleteaccount"
 }

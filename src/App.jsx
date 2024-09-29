@@ -19,7 +19,7 @@ import Cart from "./components/core/deshboard/Cart";
 import Error from "./pages/Error";
 import { ACCOUNT_TYPE } from "./utils/constants";
 import { useSelector } from "react-redux";
-import Settings from "./components/core/deshboard/Settings";
+import Settings from "./components/core/deshboard/settings/Settings";
 
 
 

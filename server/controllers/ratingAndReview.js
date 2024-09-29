@@ -48,7 +48,6 @@ exports.createRatingAndReview=async (req,res)=>{
                                                             },
                                                             {new:true}
         );
-        console.log("updated course Details::",updatedCourse);
         //return res
         return res.status(200).json({
             success:true,

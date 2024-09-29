@@ -6,8 +6,8 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { login } from '../../../services/operations/auth';
 
 function LoginForm() {
-    const dispatch=useDispatch();
     const navigate=useNavigate();
+    const dispatch=useDispatch();
 
     const [formData,setFormData]=useState({
         email:"",

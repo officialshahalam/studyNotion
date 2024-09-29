@@ -3,8 +3,10 @@ import { apiConnector } from "../apiConnector";
 import { authApi } from "../apis";
 import { setLoading, setToken } from "../../slices/authSlice";
 import { setUser } from "../../slices/ProfileSlice";
+import { useSelector } from "react-redux";
 
-const {SENDOTP_API,SIGNUP_API,LOGIN_API,RESET_PASSWORD_TOKEN_API,RESET_PASSWORD_API}=authApi;
+
+const {SENDOTP_API,SIGNUP_API,LOGIN_API,RESET_PASSWORD_TOKEN_API,RESET_PASSWORD_API,UPDATE_PASSWORD_API}=authApi;
 
 export function sendOtp(email, navigate) {
     return async (dispatch)=>{
@@ -47,10 +49,11 @@ export function login(email,password,navigate){
             const response=await apiConnector("POST",LOGIN_API,{email,password});
             console.log("Login response::",response);
             localStorage.setItem("token",response.data.token);
+            dispatch(setToken(response.data.token));
             localStorage.setItem("user",JSON.stringify(response.data.existingUser));
+            dispatch(setUser(response.data.existingUser));
             toast.success(response.data.message);
             navigate("/dashboard/my-profile");
-            window.location.reload();
         }
         catch(e){
             console.log("Error while login ::",e);
@@ -67,7 +70,7 @@ export function logOut(navigate){
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         toast.error("Loged Out");
-        navigate("/")
+        navigate("/login")
     }
 }
 
@@ -108,5 +111,31 @@ export const resetPassword=(password,confirmPassword,token,navigate)=>{
         }
         dispatch(setLoading(false));
         toast.dismiss(toastId);
+    }
+}
+
+export const updatePassword=(data,token)=>{
+    return async(dispatch)=>{
+        const toastId=toast.loading("Loading...");
+        try{
+            console.log("api url:::",UPDATE_PASSWORD_API)
+            const response=await apiConnector(
+                "PUT",
+                UPDATE_PASSWORD_API,
+                data,
+                {
+                    Authorization :`Bearer ${token}`
+                }
+            )
+            console.log("response of update password:::",response);
+            toast.success(response.data.message);
+            toast.dismiss(toastId);
+            dispatch(setUser(response.data.updatedUser));
+            localStorage.setItem("user",JSON.stringify(response.data.updatedUser));
+        }
+        catch(e){
+            console.log("error while update Password:::",e);
+            toast.dismiss(toastId);
+        }
     }
 }

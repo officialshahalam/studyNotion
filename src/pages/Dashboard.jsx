@@ -5,7 +5,7 @@ import Sidebar from '../components/core/deshboard/Sidebar';
 
 function Dashboard() {
 
-    const {user, loading: authLoading } = useSelector((state) => state.auth);
+    const { loading: authLoading } = useSelector((state) => state.auth);
     const { loading: profileLoading } = useSelector((state) => state.profile);
 
     if (profileLoading || authLoading) {
