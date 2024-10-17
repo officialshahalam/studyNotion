@@ -20,6 +20,7 @@ import Error from "./pages/Error";
 import { ACCOUNT_TYPE } from "./utils/constants";
 import { useSelector } from "react-redux";
 import Settings from "./components/core/deshboard/settings/Settings";
+import AddCourse from "./components/core/deshboard/course";
 
 
 
@@ -59,6 +60,15 @@ function App() {
                 <Route path="/dashboard/enrolled-courses" element={<EnrolledCourse />} />
                 <Route path="/dashboard/purchase-history" element={<PurchaseHistory />} />
                 <Route path="/dashboard/cart" element={<Cart />} />
+              </>
+            )
+          }
+          {/* routes for instructor */}
+          {
+            user?.accountType === ACCOUNT_TYPE.INSTRUCTOR &&
+            (
+              <>
+                <Route path="/dashboard/add-course" element={<AddCourse />} />
               </>
             )
           }
